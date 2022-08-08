@@ -1,5 +1,6 @@
 package net.javaguides.RESTAPI.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,7 +25,9 @@ public class Employee {
     @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "email_id")
-    private String emailId;
+    private String email;
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private String password;
 
 }
